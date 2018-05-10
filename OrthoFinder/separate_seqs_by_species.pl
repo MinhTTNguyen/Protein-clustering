@@ -4,8 +4,8 @@
 #! /usr/perl/bin -w
 use strict;
 
-my $folderin="Without_characterized_seqs";
-my $folderout="Without_characterized_seqs_each_species";
+my $folderin="/home/mnguyen/Research/Xyloglucanases/Without_characterized";
+my $folderout="/home/mnguyen/Research/Xyloglucanases/Without_characterized_each_species";
 mkdir $folderout;
 
 opendir(DIR,$folderin) || die "Cannot open folder $folderin";
@@ -32,15 +32,28 @@ foreach my $file (@files)
 				{
 					my @cols=split(/\|/,$id);
 					$species=$cols[1];
-				}else
-				{
-					if ($id=~/^ACLA\_/){$species="Aspcl";}
-					elsif($id=~/^AFL2T\_/){$species="Aspfl";}
-					elsif($id=~/^NFIA\_/){$species="Aspfi";}
-					elsif($id=~/^ATET\_/){$species="Aspte";}
-					elsif($id=~/^Afu/){$species="Aspfu";}
-					else{$species="Aspor";}
 				}
+				#----------------------------------------------------------------------------#
+				# This is for proteins downloaded from Broad
+				#else
+				#{
+				#	if ($id=~/^ACLA\_/){$species="Aspcl";}
+				#	elsif($id=~/^AFL2T\_/){$species="Aspfl";}
+				#	elsif($id=~/^NFIA\_/){$species="Aspfi";}
+				#	elsif($id=~/^ATET\_/){$species="Aspte";}
+				#	elsif($id=~/^Afu/){$species="Aspfu";}
+				#	else{$species="Aspor";}
+				#}
+				#----------------------------------------------------------------------------#
+				
+				#----------------------------------------------------------------------------#
+				# This is for proteins downloaded from CSFG
+				else
+				{
+					$species=$id;
+					$species=~s/\_.+//;
+				}
+				#----------------------------------------------------------------------------#
 				my $fileout=$species.".fasta";
 				open(Out,">>$folderout/$folderout_family/$fileout") || die "Cannot open file $fileout";
 			}else{$_=~s/\s*//g;$seq=$seq.$_;}
@@ -49,15 +62,27 @@ foreach my $file (@files)
 		{
 			my @cols=split(/\|/,$id);
 			$species=$cols[1];
-		}else
-		{
-			if ($id=~/^ACLA\_/){$species="Aspcl";}
-			elsif($id=~/^AFL2T\_/){$species="Aspfl";}
-			elsif($id=~/^NFIA\_/){$species="Aspfi";}
-			elsif($id=~/^ATET\_/){$species="Aspte";}
-			elsif($id=~/^Afu/){$species="Aspfu";}
-			else{$species="Aspor";}
 		}
+		
+		#----------------------------------------------------------------------------#
+		# This is for proteins downloaded from Broad
+		#else
+		#{
+		#	if ($id=~/^ACLA\_/){$species="Aspcl";}
+		#	elsif($id=~/^AFL2T\_/){$species="Aspfl";}
+		#	elsif($id=~/^NFIA\_/){$species="Aspfi";}
+		#	elsif($id=~/^ATET\_/){$species="Aspte";}
+		#	elsif($id=~/^Afu/){$species="Aspfu";}
+		#	else{$species="Aspor";}
+		#}
+		#----------------------------------------------------------------------------#
+		
+		else
+		{
+			$species=$id;
+			$species=~s/\_.+//;
+		}
+		
 		my $fileout=$species.".fasta";
 		open(Out,">>$folderout/$folderout_family/$fileout") || die "Cannot open file $fileout";
 		print Out ">$id\n$seq\n";
