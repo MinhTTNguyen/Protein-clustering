@@ -4,8 +4,8 @@
 #! /usr/perl/bin -w
 use strict;
 
-my $folderin="/home/mnguyen/Research/Xyloglucanases/Without_characterized";
-my $folderout="/home/mnguyen/Research/Xyloglucanases/Without_characterized_each_species";
+my $folderin="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Temp";
+my $folderout="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Tempout";
 mkdir $folderout;
 
 opendir(DIR,$folderin) || die "Cannot open folder $folderin";
@@ -27,7 +27,7 @@ foreach my $file (@files)
 			{
 				if ($seq){print Out ">$id\n$seq\n";close(Out);$seq="";$id="";}
 				$id=$_;
-				$id=~s/^\>//;
+				$id=~s/^\>Fungi\|//;
 				if ($id=~/^jgi/)
 				{
 					my @cols=split(/\|/,$id);
