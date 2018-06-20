@@ -9,9 +9,9 @@ This script is to read the "cluster tables" from nwk files and fasta files to:
 use strict;
 #use Getopt::Long;
 
-my $filein_cluster_table="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Fungi_GH25_fullseq_12June2018_nr_cluster_table.txt";
-my $filein_fasta="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Fungi_GH25_fullseq_12June2018_nr_added_production_info_new.fasta";
-my $folderout="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Clusters";
+my $filein_cluster_table="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Ful_prot_seq_removed_bad_model_noSP_keep_selected_Jun19_cluster_table.txt";
+my $filein_fasta="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Ful_prot_seq_removed_bad_model_noSP_keep_selected_Jun19.fasta";
+my $folderout="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Clusters_19Jun2018_40C";
 mkdir $folderout;
 #GetOptions('in_clusters=s'=>\$filein_cluster_table, 'in_fasta=s'=>\$filein_fasta, 'out=s'=>\$folderout);
 

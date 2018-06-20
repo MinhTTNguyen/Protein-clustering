@@ -22,8 +22,8 @@ chmod 0777, "Temp";
 #my $fileout="";
 #GetOptions('in=s'=>\$filein, 'out=s'=>\$fileout);
 
-my $filein="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Fungi_GH25_all_57_clusters.fasta";
-my $fileout="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Fungi_GH25_all_57_clusters_matrix.txt";
+my $filein="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Clusters_19Jun2018_40C/40_clusters.fasta";
+my $fileout="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Clusters_19Jun2018_40C/40_clusters_matrix.txt";
 
 
 ######################################################################################

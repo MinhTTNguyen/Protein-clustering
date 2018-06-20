@@ -18,8 +18,8 @@ my $fileout="$path/centroids_MAFFT_Group2_edited_cluster_table_2.txt";
 
 
 #my $path="";
-my $filein_nwk="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Fungi_GH25_fullseq_12June2018_nr_added_production_info_new_MAFFT_EM_version.nwk";
-my $fileout="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Fungi_GH25_fullseq_12June2018_nr_cluster_table.txt";
+my $filein_nwk="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Ful_prot_seq_removed_bad_model_noSP_keep_selected_Jun19_MAFFT.nwk";
+my $fileout="/home/mnguyen/Research/Lysozyme/GH25_all_15Dec2017/Fungi/12June2018/Ful_prot_seq_removed_bad_model_noSP_keep_selected_Jun19_cluster_table.txt";
 
 
 #GetOptions('in=s'=>\$filein_nwk, 'out=s'=>\$fileout);
